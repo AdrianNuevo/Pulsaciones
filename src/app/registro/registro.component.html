@@ -1,0 +1,46 @@
+<form action="">
+    <div>
+        <label>Introduzca su nombre:</label>
+        <input type="text" name="" id="nombre">
+    </div>
+    <div>
+        <label>Seleccione su sexo:</label>
+        <select name="" id="sexo">
+            <option>Masculino</option>
+            <option>Femenino</option>
+        </select>
+    </div>
+    <div>
+        <label>Introduzca su edad:</label>
+        <input type="number" id="edad">
+    </div>
+    <div>
+        <button type="button" onclick="pulsacion()">Calcular pulsaciones por segundo recomendadas</button>
+    </div>
+</form>
+<script>
+
+function pulsacion() {
+    var nombre=document.getElementById("nombre").value;
+    var edad = document.getElementById("edad").value;
+    var sex = document.getElementById("sexo").value;
+    var puls;
+    var texto;
+
+    if (nombre==="") 
+        texto="Introduzca su nombre :(";
+        
+    else if (edad==="") 
+    texto="Introduzca su edad :(";    
+    
+    else if (sex === "Masculino") {
+        puls = 220 - parseInt(edad);
+        puls /= 10;
+        texto="Por cada 10 segundos de ejercicio aerobico usted debe tener " + puls + " pulsaciones";
+    } else {
+        puls = 210 - parseInt(edad);
+        puls /= 10;
+        texto="Por cada 10 segundos de ejercicio aerobico usted debe tener " + puls + " pulsaciones";
+    }
+    window.alert(texto);
+}</script>
